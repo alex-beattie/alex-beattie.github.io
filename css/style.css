@@ -1,0 +1,56 @@
+/* Base Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+  }
+  
+  /* Light Theme */
+  body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* Dark Theme */
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #228B22;
+  }
+  
+  .navbar .nav-link {
+    color: #ffffff;
+  }
+  
+  .navbar .nav-link:hover {
+    color: #d4d4d4;
+  }
+  
+  /* Section Styling */
+  section {
+    padding: 60px 0;
+  }
+  
+  /* Card Styling */
+  .card {
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Tools Icons */
+  .list-inline-item {
+    margin: 10px;
+    font-size: 1.5
+  ::contentReference[oaicite:31]{index=31}
+   
+  
