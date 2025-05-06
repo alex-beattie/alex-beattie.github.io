@@ -167,3 +167,36 @@ body {
   font-size: 0.9rem;
   color: #2f4f2f;
 }
+/* override the “hidden until reveal” */
+.section {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* sticky page‑wide nav bar */
+.section-nav {
+  background: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* project gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-detail h3 {
+  margin-top: 0;
+}
+.project-detail p {
+  margin-bottom: 1rem;
+}
