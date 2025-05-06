@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alexander Beattie Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Inter:wght@400;600;700&display=swap" 
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Fullscreen Tweet-style Landing -->
   <div class="tweet-section">
     <div class="tweet">
       <div class="tweet-header">
@@ -19,117 +21,16 @@
         </div>
       </div>
       <div class="tweet-content">
-        I’m Alex, a rising junior studying Mechanical Engineering at Tufts University who thrives on turning new ideas into real-world prototypes—whether that’s designing in the makerspace or mentoring peers as a Teaching Fellow. When I’m not sketching CAD models you’ll find me rock climbing, refereeing soccer, or cooking up themes for my fraternity’s next social event.
+        TESTTESTESTTESTTEST | I’m Alex, a rising junior studying Mechanical Engineering at Tufts University who thrives on turning new ideas into real‑world prototypes—whether that’s designing in the makerspace or mentoring peers as a Teaching Fellow. When I’m not sketching CAD models you’ll find me rock climbing, refereeing soccer, or cooking up themes for my fraternity’s next social event.
       </div>
       <div class="tweet-footer">
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#resume" class="nav-link">Resume</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="resume.html" class="nav-link">Resume</a>
         <a href="mailto:alexander.beattie@tufts.edu">Email</a>
         <a href="https://www.linkedin.com/in/alexander-beattie-tufts" target="_blank">LinkedIn</a>
       </div>
     </div>
   </div>
-
-  <!-- Projects Section -->
-  <div class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="project" data-modal="modal-esp32">
-      <img src="images/project1.jpg" alt="ESP32 Rover Thumbnail">
-      <h3>ESP32 Rover</h3>
-      <p>Mentored students through prototyping a small robot using 3D printing and microcontrollers.</p>
-    </div>
-    <div class="project" data-modal="modal-easter">
-      <img src="images/project2.jpg" alt="Easter Egg Hunt Thumbnail">
-      <h3>Campus-wide Easter Egg Hunt</h3>
-      <p>Organized hiding 15,000+ eggs, combining engineering, logistics, and community engagement.</p>
-    </div>
-    <div class="project" data-modal="modal-logo">
-      <img src="images/project3.jpg" alt="Logo Design Thumbnail">
-      <h3>Climbing Instagram Logo</h3>
-      <p>Designed a personal brand logo reflecting engineering background and climbing passion.</p>
-    </div>
-  </div>
-
-  <!-- Skills Section -->
-  <div class="section" id="skills">
-    <h2>Skills</h2>
-    <div class="skill">CAD modeling / SolidWorks, OnShape</div>
-    <div class="skill">Arduino / ESP32 programming</div>
-    <div class="skill">Python, HTML/CSS/JS</div>
-    <div class="skill">3D printing, Laser Cutting, CNC machining</div>
-    <div class="skill">Teaching & Mentorship</div>
-  </div>
-
-  <!-- Resume Section -->
-  <div class="section" id="resume">
-    <h2>Resume</h2>
-    <div class="resume">
-      <p><a href="resume/Alexander_Beattie_Resume.pdf" target="_blank">Download my resume (PDF)</a></p>
-    </div>
-  </div>
-
-  <!-- Modals for Projects -->
-  <div class="modal" id="modal-esp32">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <h2>ESP32 Rover</h2>
-      <p>In-depth description: Guided students through design, programming, and fabrication of a rover using 3D printing, laser cutting, and ESP32 microcontrollers.</p>
-      <img src="images/project1.jpg" alt="ESP32 Rover">
-    </div>
-  </div>
-  <div class="modal" id="modal-easter">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <h2>Campus-wide Easter Egg Hunt</h2>
-      <p>Planned logistics for hiding 15,000 eggs, coordinated volunteers, mapped routes, and ensured smooth event execution across campus.</p>
-      <img src="images/project2.jpg" alt="Easter Egg Hunt">
-    </div>
-  </div>
-  <div class="modal" id="modal-logo">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <h2>Logo Design</h2>
-      <p>Crafted a minimalist logo to embody both mechanical engineering principles and my passion for climbing, iterating on typography and iconography.</p>
-      <img src="images/project3.jpg" alt="Logo Design">
-    </div>
-  </div>
-
-  <div class="footer">
-    &copy; 2025 Alexander Beattie — Built with HTML & CSS
-  </div>
-
-  <script>
-    // Smooth scroll for nav links
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    // Reveal sections on scroll
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1 });
-    sections.forEach(sec => observer.observe(sec));
-
-    // Modal functionality
-    document.querySelectorAll('.project').forEach(item => {
-      item.addEventListener('click', () => {
-        const modal = document.getElementById(item.dataset.modal);
-        modal.style.display = 'flex';
-      });
-    });
-    document.querySelectorAll('.modal-close').forEach(btn => {
-      btn.addEventListener('click', () => btn.closest('.modal').style.display = 'none');
-    });
-    window.addEventListener('click', e => {
-      if (e.target.classList.contains('modal')) e.target.style.display = 'none';
-    });
-  </script>
 </body>
 </html>
