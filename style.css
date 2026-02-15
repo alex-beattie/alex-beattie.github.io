@@ -253,6 +253,15 @@ body.home-bg {
   position: sticky;
   top: 0;
   z-index: 100;
+  align-items: center;
+}
+
+.nav-brand {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1f5692;
+  margin-right: auto;
+  letter-spacing: -0.03em;
 }
 
 .section-nav a {
@@ -297,12 +306,62 @@ body.home-bg {
 
 .gallery-main {
   width: 100%;
-  max-width: 540px;
-  max-height: 340px;
+  max-width: 700px;
+  max-height: 480px;
+  min-height: 320px;
   object-fit: contain;
   border-radius: 1rem;
-  box-shadow: 0 2px 12px rgba(31,86,146,0.10);
+  box-shadow: 0 4px 18px rgba(31,86,146,0.13);
   background: #f6fbff;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* Fullscreen/zoom overlay */
+.gallery-zoom-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(20,30,50,0.92);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  animation: fadeIn 0.2s;
+}
+.gallery-zoomed {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  background: #fff;
+  transition: transform 0.2s;
+}
+.gallery-zoom-close, .gallery-zoom-in, .gallery-zoom-out {
+  position: absolute;
+  top: 2.5vh;
+  background: #fff;
+  color: #1f5692;
+  border: none;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  width: 1.9em;
+  height: 1.9em;
+  box-shadow: 0 2px 8px rgba(31,86,146,0.13);
+  cursor: pointer;
+  margin: 0 0.3em;
+  z-index: 10;
+  opacity: 0.95;
+  transition: background 0.15s;
+}
+.gallery-zoom-close { right: 2vw; }
+.gallery-zoom-in { right: 8vw; font-size: 1.1rem; }
+.gallery-zoom-out { right: 14vw; font-size: 1.1rem; }
+.gallery-zoom-close:hover, .gallery-zoom-in:hover, .gallery-zoom-out:hover {
+  background: #eaf2fa;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .gallery-thumbs {
@@ -425,4 +484,67 @@ body.home-bg {
   box-shadow: 0 2px 6px rgba(29,155,240,0.10);
   border-color: #1f5692;
   transform: translateY(1px) scale(0.99);
+}
+
+/* Skills List Styling */
+.skill-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-list li {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fcfe 100%);
+  border-left: 5px solid #1f5692;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: #333;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(31, 86, 146, 0.08);
+  transition: all 0.25s ease;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.skill-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0.7rem;
+  color: #1f5692;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.skill-list li:hover {
+  transform: translateX(8px);
+  box-shadow: 0 4px 14px rgba(31, 86, 146, 0.15);
+  border-left-color: #1d9bf0;
+}
+
+/* Resume Section Styling */
+.resume p {
+  font-size: 1.05rem;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8fcfe 0%, #ffffff 100%);
+  border: 2px dashed #1f5692;
+  border-radius: 0.75rem;
+}
+
+.resume a {
+  display: inline-block;
+  padding: 0.75rem 1.8rem;
+  background: linear-gradient(135deg, #1f5692 0%, #1a4d7a 100%);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(31, 86, 146, 0.25);
+}
+
+.resume a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(31, 86, 146, 0.35);
+  background: linear-gradient(135deg, #1a4d7a 0%, #0f2e4d 100%);
 }

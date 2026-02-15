@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 2 — Alex Beattie</title>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Inter:wght@400;600;700&display=swap" 
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <script src="gallery-zoom.js" defer></script>
+</head>
+<body>
+  <nav class="section-nav">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
+    <a href="resume.html">Resume</a>
+  </nav>
+
+  <main class="section project-detail" id="project2">
+    <h2>Project 2</h2>
+    <div class="gallery">
+      <img class="gallery-main" src="images/project2.jpg" alt="Project 2 Main Image">
+      <div class="gallery-thumbs">
+        <img src="images/project2.jpg" alt="Project 2 Main Image" onclick="document.querySelector('.gallery-main').src=this.src">
+      </div>
+    </div>
+    <section>
+      <h3>Project Overview</h3>
+      <p>
+        <!-- Project 2 overview goes here. -->
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    &copy; 2026 Alexander Beattie
+  </footer>
+</body>
+</html>
