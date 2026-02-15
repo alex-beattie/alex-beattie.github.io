@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=0.3"/>
-  <title>Engineering Design: Dallas' Detangulator — Alex Beattie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detangulator 5000 — Alex Beattie</title>
   <link 
     href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Inter:wght@400;600;700&display=swap" 
     rel="stylesheet"
@@ -20,49 +20,100 @@
   </nav>
 
   <main class="section project-detail" id="project1">
-    <h2>Engineering Design: Dallas' Detangulator</h2>
-    <div class="gallery">
-      <img class="gallery-main" src="images/DallasDetangulator/1.jpg" alt="Dallas' Detangulator Image 1">
-      <div class="gallery-thumbs">
-        <img src="images/DallasDetangulator/1.jpg" alt="Dallas' Detangulator Image 1" onclick="document.querySelector('.gallery-main').src=this.src">
-        <img src="images/DallasDetangulator/2.jpg" alt="Dallas' Detangulator Image 2" onclick="document.querySelector('.gallery-main').src=this.src">
-        <img src="images/DallasDetangulator/3.jpg" alt="Dallas' Detangulator Image 3" onclick="document.querySelector('.gallery-main').src=this.src">
-        <img src="images/DallasDetangulator/4.jpg" alt="Dallas' Detangulator Image 4" onclick="document.querySelector('.gallery-main').src=this.src">
-        <img src="images/DallasDetangulator/5.jpg" alt="Dallas' Detangulator Image 5" onclick="document.querySelector('.gallery-main').src=this.src">
+  <header class="project-hero">
+    <div class="project-hero-top">
+      <h1 class="project-title">Detangulator 5000</h1>
+      <p class="project-subtitle">Assistive haircare device for independent detangler application</p>
+      <div class="project-meta">
+        <span class="meta-chip">ME40 · Engineering Design I (Tufts)</span>
+        <span class="meta-chip">Client: Dallas (Cerebral Palsy)</span>
+        <span class="meta-chip">Team of 3</span>
+        <span class="meta-chip">Prototyping + User-centered design</span>
       </div>
     </div>
-    <section>
-      <h3>Project Overview</h3>
+
+    <div class="project-hero-blurb">
       <p>
-        Dallas' Detangulator is a mechanical solution designed to automatically untangle headphone wires using a series of geared rollers and sensors. This project was completed as part of a senior design course, focusing on hands-on prototyping, iterative design, and teamwork.
+        Designed and prototyped a chair-mounted detangler sprayer that helps a client with cerebral palsy position and actuate spray with less effort, increasing independence in a daily self-care routine.
       </p>
-    </section>
-    <section>
-      <h3>Key Features & Highlights</h3>
+    </div>
+
+    <div class="project-quickfacts">
+      <div class="quickfact"><div class="q-label">Core problem</div><div class="q-value">Hard to aim + press spray trigger</div></div>
+      <div class="quickfact"><div class="q-label">Key idea</div><div class="q-value">Stabilize bottle, move the nozzle, remote actuation</div></div>
+      <div class="quickfact"><div class="q-label">Mechanisms</div><div class="q-value">Ball & socket + pull-string trigger + tube extension</div></div>
+      <div class="quickfact"><div class="q-label">Build methods</div><div class="q-value">Laser-cut acrylic + 3D printed parts</div></div>
+    </div>
+  </header>
+
+  <div class="gallery">
+    <img class="gallery-main" src="images/DallasDetangulator/1.jpg" alt="Detangulator 5000 overview">
+    <div class="gallery-caption" aria-live="polite">Final prototype overview (mounted, adjustable, hands-free spraying).</div>
+    <div class="gallery-thumbs">
+      <img src="images/DallasDetangulator/1.jpg" alt="Detangulator overview" data-caption="Final prototype overview (mounted, adjustable, hands-free spraying).">
+      <img src="images/DallasDetangulator/2.jpg" alt="Full device" data-caption="Completed Project Poster">
+      <img src="images/DallasDetangulator/3.jpg" alt="Base and actuator detail" data-caption="Close-up of the electirc spray nozzle and string actuation system.">
+      <img src="images/DallasDetangulator/4.jpg" alt="Nozzle and linkage detail" data-caption="Nozzle positioning: adjustable aim using the ball & socket joint.">
+      <img src="images/DallasDetangulator/5.jpg" alt="Early prototype base" data-caption="Early prototype base + mount concept (stability + hands-free use).">
+      <img src="images/DallasDetangulator/6.jpg" alt="Ball+Socket CAD Model" data-caption="SOLIDWORKS CAD model of the ball & socket joint used for nozzle positioning.">
+      <img src="images/DallasDetangulator/7.jpg" alt="Laser Cut Arm Model" data-caption="SOLIDWORKS CAD model of the laser-cut arm structure that holds the nozzle and routes the actuation string.">
+    </div>
+  </div>
+
+  <section class="case-section">
+    <h3>Quick project description</h3>
+    <p>
+      A user-centered assistive device built for Dallas, an 11-year-old with cerebral palsy, to help her apply Suave Kids detangler with better control. The system reduces required hand strength for actuation and makes aiming easier through a mounted, adjustable mechanism.
+    </p>
+  </section>
+
+  <section class="case-section">
+    <h3>Longer project description</h3>
+    <p>
+      In ME40, teams partnered with real clients to identify a daily-life challenge and prototype an assistive device solution. Our client, Dallas, cares a lot about her hair and wants to maintain it more independently. She enjoys using detangler spray, but struggles to hold the bottle at the right distance while pressing the spray trigger due to limited range of motion and finger stiffness.
+    </p>
+    <p>
+      We designed a solution that keeps the bottle stable and close to the user, redirects spray to a targeted area using tubing, and enables low-effort actuation using a pull-string mechanism. The device can be mounted to a chair armrest using straps, allowing Dallas to adjust the nozzle position and control when spray is dispensed.
+    </p>
+  </section>
+
+  <section class="case-section">
+    <h3>Iterative design process</h3>
+    <ol class="process-steps">
+      <li><strong>Problem framing:</strong> Interviewed the client and clarified the biggest friction points (aiming distance + trigger force).</li>
+      <li><strong>Market research:</strong> Looked at reach tools and remote sprayers to understand what already exists and why it falls short for this use.</li>
+      <li><strong>Requirements:</strong> Converted user needs into measurable targets (low force actuation, stable mounting, simple setup).</li>
+      <li><strong>Prototyping:</strong> Built early structures to explore mounting, reach, and actuation strategies.</li>
+      <li><strong>Refinement:</strong> Improved stability and usability; cleaned up actuation path, nozzle aiming, and setup steps.</li>
+    </ol>
+  </section>
+
+  <section class="case-section">
+    <h3>Engineering skills used</h3>
+    <div class="skills-grid">
+      <div class="skill-card"><h4>CAD + mechanism design</h4><p>Designed mounting + jointed positioning concept to balance adjustability with stability.</p></div>
+      <div class="skill-card"><h4>Rapid prototyping</h4><p>Laser-cut acrylic structural parts and 3D printed custom mounts / holders.</p></div>
+      <div class="skill-card"><h4>Human-centered design</h4><p>Translated client needs into requirements, then iterated based on usability and handoff feedback.</p></div>
+      <div class="skill-card"><h4>System integration</h4><p>Combined positioning, actuation, fluid routing, and mounting into one consistent workflow.</p></div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h3>Conclusions</h3>
+    <p>
+      This project taught me how much “small” details matter when you design for real people. Trigger force, setup steps, and how intuitive a mechanism feels can make or break usability. Iteration wasn’t optional — it was the only way to get closer to something that could fit into someone’s actual routine.
+    </p>
+    <div class="callout">
+      <h4>If I had more time / budget</h4>
       <ul>
-        <li>Custom 3D-printed chassis and gear train</li>
-        <li>Laser-cut acrylic panels for structure and visibility</li>
-        <li>Arduino-based control system for motor and sensor integration</li>
-        <li>Iterative prototyping and testing for reliability</li>
-        <li>Team collaboration: mechanical, electrical, and software integration</li>
+        <li>Swap string actuation for a simpler button/remote control (more intuitive, fewer snag risks).</li>
+        <li>Redesign for a more compact form factor and improved durability (materials beyond acrylic).</li>
+        <li>Create a universal mounting kit to fit a wider range of chair geometries.</li>
+        <li>Improve tolerances and joints for smoother, longer-life adjustment.</li>
       </ul>
-    </section>
-    <section>
-      <h3>Engineering Process</h3>
-      <p>
-        The project began with brainstorming and concept sketches, followed by CAD modeling in SolidWorks. Prototypes were built using 3D printing and laser cutting, with each iteration tested for performance. The final design incorporated feedback from user testing and peer reviews.
-      </p>
-    </section>
-    <section>
-      <h3>What I Learned</h3>
-      <ul>
-        <li>Advanced CAD and rapid prototyping techniques</li>
-        <li>Integrating electronics with mechanical systems</li>
-        <li>Project management and documentation</li>
-        <li>Presenting technical work to both technical and non-technical audiences</li>
-      </ul>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 
   <footer class="footer">
     &copy; 2026 Alexander Beattie
