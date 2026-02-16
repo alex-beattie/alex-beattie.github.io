@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Project 2 — Alex Beattie</title>
+  <title>ME30 Final Project: Cooperative Payload Balancing Robot — Alex Beattie</title>
   <link 
     href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Inter:wght@400;600;700&display=swap" 
     rel="stylesheet"
@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style.css" />
   <script src="gallery-zoom.js" defer></script>
 </head>
+
 <body>
   <nav class="section-nav">
     <a href="index.html">Home</a>
@@ -20,19 +21,178 @@
   </nav>
 
   <main class="section project-detail" id="project2">
-    <h2>Project 2</h2>
-    <div class="gallery">
-      <img class="gallery-main" src="images/project2.jpg" alt="Project 2 Main Image">
-      <div class="gallery-thumbs">
-        <img src="images/project2.jpg" alt="Project 2 Main Image" onclick="document.querySelector('.gallery-main').src=this.src">
+
+    <!-- HERO -->
+    <div class="project-hero">
+      <h1 class="project-title">Cooperative Payload Balancing Robot</h1>
+      <p class="project-subtitle">
+        ME30: Electronics & Controls — measured unknown payload mass and placed it to balance a seesaw with another robot
+      </p>
+
+      <div class="project-meta">
+        <span class="meta-chip">Team of 2</span>
+        <span class="meta-chip">Platform: Raspberry Pi</span>
+        <span class="meta-chip">Control: Custom Web UI</span>
+        <span class="meta-chip">Sensor: Load Cell</span>
+        <span class="meta-chip">Signal Chain: Op-Amp + ADC</span>
+        <span class="meta-chip">Motor Drivers: L298N</span>
+      </div>
+
+      <div class="project-hero-blurb">
+        <p>
+          Designed and built a Raspberry Pi–controlled robot capable of measuring unknown payload mass using a load cell (op-amp + ADC) and
+          placing it to balance a seesaw with another robot. Achieved consistent, repeatable balancing during both practice testing and the final demo
+          through iterative integration of mechanical, electrical, and control systems.
+        </p>
+      </div>
+
+      <div class="project-quickfacts">
+        <div class="quickfact">
+          <div class="q-label">Challenge</div>
+          <div class="q-value">Identify an unknown payload mass (400g / 700g / 1000g) and place it to balance torque</div>
+        </div>
+        <div class="quickfact">
+          <div class="q-label">What we built</div>
+          <div class="q-value">Drive base + lifting arm + mass measurement + remote control workflow</div>
+        </div>
+        <div class="quickfact">
+          <div class="q-label">Result</div>
+          <div class="q-value">Successfully balanced the seesaw reliably in testing and final demonstration</div>
+        </div>
       </div>
     </div>
-    <section>
-      <h3>Project Overview</h3>
+
+   
+    <div class="gallery">
+      <img class="gallery-main" src="images/ME30 Final/robot.jpg" alt="Robot prototype (assembled system)">
+
+      <div class="gallery-caption">
+        Final robot build: drive base + arm + electronics integrated for remote operation.
+      </div>
+
+      <div class="gallery-thumbs">
+        <img src="images/ME30 Final/robot.jpg"
+             alt="Robot prototype (assembled system)"
+             data-caption="Final robot build: drive base + arm + electronics integrated for remote operation.">
+
+        <img src="images/ME30 Final/wiring.JPG"
+             alt="Wiring diagram (Pi + motor drivers + sensor chain)"
+             data-caption="Wiring diagram: Raspberry Pi GPIO + power distribution + L298N motor drivers + load cell signal chain (op-amp + ADC).">
+
+        <img src="images/ME30 Final/cad.png"
+             alt="CAD model of robot chassis"
+             data-caption="CAD model of robot chassis used to plan structure, mounting, and component layout.">
+      </div>
+    </div>
+
+    <!-- QUICK DESCRIPTION -->
+    <section class="case-section">
+      <h3>Quick Project Description</h3>
       <p>
-        <!-- Project 2 overview goes here. -->
+        For the final project in ME30, we built a robot that could carry a heavy payload, measure its mass using a load cell,
+        then place it at a selected distance on a seesaw to balance torque against another robot’s payload.
       </p>
     </section>
+
+    <!-- CONTEXT -->
+    <section class="case-section">
+      <h3>Project Context & Requirements</h3>
+      <p>
+        This was a two-part “mega project” (Projects 5 & 6). In P5 we built a robust remote-controlled robot that could drive while carrying a hefty payload.
+        In P6 we modified it to measure an unknown payload mass and place it strategically on a seesaw to balance torque with another team.
+      </p>
+
+      <ul class="process-steps">
+        <li>Robot must fit within a 45 cm diameter footprint and remain stable while carrying payload</li>
+        <li>Payloads appear identical but are 400 g, 700 g, or 1000 g (chosen randomly)</li>
+        <li>Mass must be determined via load cell (no visual markings allowed)</li>
+        <li>Must place payload away from the center (pivot region off-limits)</li>
+        <li>Robot must be remotely controlled (web/WiFi-based control, not RC car controller)</li>
+      </ul>
+    </section>
+
+    <!-- SYSTEM OVERVIEW -->
+    <section class="case-section">
+      <h3>System Overview</h3>
+      <ul class="process-steps">
+        <li><strong>Mechanical:</strong> Custom chassis + lifting arm designed to carry up to 1 kg payload while maintaining stability</li>
+        <li><strong>Sensing:</strong> Load cell integrated into arm, amplified via op-amp and read through ADC</li>
+        <li><strong>Electronics:</strong> L298N motor drivers (we also designed/manufactured KiCad H-bridge PCBs, but used L298N due to time/space constraints)</li>
+        <li><strong>Controls:</strong> Custom web-based UI to remotely drive the robot and control raising/lowering of the arm</li>
+      </ul>
+    </section>
+
+    <!-- ITERATION -->
+    <section class="case-section">
+      <h3>Iterative Design Process</h3>
+      <ol class="process-steps">
+        <li><strong>Drive system first:</strong> Built a stable, maneuverable base that could carry a heavy payload without tipping</li>
+        <li><strong>Sensor integration:</strong> Mounted load cell into the arm and developed the op-amp + ADC signal chain to get usable readings</li>
+        <li><strong>Calibration:</strong> Calibrated on-robot using known masses matching the expected payloads (400g / 700g / 1000g)</li>
+        <li><strong>Control interface:</strong> Built a web UI with buttons for driving and arm actuation to make operation repeatable and fast</li>
+        <li><strong>Full-system testing:</strong> Repeated “drive → lift → measure → place” tests until the system was consistent under real conditions</li>
+      </ol>
+
+      <div class="callout">
+        <h4>Key Insight</h4>
+        <p>
+          The hardest part wasn’t any single subsystem — it was making the interfaces clean (mounting stiffness, wiring reliability, signal quality, and repeatability)
+          so the whole robot behaved predictably.
+        </p>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="case-section">
+      <h3>Results</h3>
+      <p>
+        Our robot successfully and repeatably balanced the seesaw during both practice testing and the final demonstration.
+        Calibration and iterative integration allowed us to reliably measure unknown payloads and choose placement positions that achieved torque balance.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="case-section">
+      <h3>Engineering Skills Used</h3>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4>Electronics</h4>
+          <p>Op-amp signal conditioning, ADC integration, L298N motor driving, wiring/debugging under time constraints.</p>
+        </div>
+        <div class="skill-card">
+          <h4>Controls & Software</h4>
+          <p>Raspberry Pi GPIO control, custom web-based UI, repeatable control logic for drive + arm operation.</p>
+        </div>
+        <div class="skill-card">
+          <h4>Mechanical Design</h4>
+          <p>Chassis CAD, arm integration, stability/center-of-mass considerations while carrying up to 1 kg payload.</p>
+        </div>
+        <div class="skill-card">
+          <h4>Systems Integration</h4>
+          <p>End-to-end bring-up, calibration, debugging interfaces, and iterating fast to reach reliable performance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPROVEMENTS -->
+    <section class="case-section">
+      <h3>Conclusions & Future Improvements</h3>
+      <ul class="process-steps">
+        <li>Replace temporary wiring with soldered connections and/or a perfboard to improve reliability and reduce debugging time</li>
+        <li>Use more custom PCBs (including our KiCad H-bridge boards) to reduce size and clean up packaging</li>
+        <li>Redesign the arm actuation: explore cam, pulley, or improved transmission (our string mechanism worked but struggled with the heaviest payload)</li>
+        <li>Improve enclosure/strain relief and overall polish so the robot is more “showcase ready,” not just functional</li>
+      </ul>
+
+      <div class="callout">
+        <h4>Reflection</h4>
+        <p>
+          Given the short timeframe, I’m proud we delivered a fully working robot that met and exceeded the requirements.
+          With more time, I’d focus on turning this into a cleaner, more permanent build that I could confidently demo without any “prototype chaos.”
+        </p>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
