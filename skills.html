@@ -21,13 +21,22 @@
 
   <main class="section" id="skills">
     <h2>Skills</h2>
-    <ul class="skill-list">
-      <li>CAD modeling & SolidWorks / OnShape</li>
-      <li>Arduino & ESP32 microcontroller programming</li>
-      <li>Python, HTML/CSS/JavaScript</li>
-      <li>3D printing, Laser cutting, CNC machining</li>
-      <li>Teaching, Mentorship, Peer Leadership</li>
-    </ul>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+      <div>
+        <h3 style="font-size:1.25rem;color:#1f5692;margin-bottom:0.7rem;">Fabrication & Hardware</h3>
+        <ul class="skill-list">
+          <li>3D Printing, Laser Cutting, CNC Machining, Rapid Prototyping</li>
+          <li>Raspberry Pi, ESP32, GPIO interfacing, Sensors & Actuators</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:1.25rem;color:#1f5692;margin-bottom:0.7rem;">Programming & Software</h3>
+        <ul class="skill-list">
+          <li>Python, Jupyter Notebooks, MATLAB</li>
+          <li>CAD (SolidWorks, Onshape), FEA, KiCAD, COMSOL Multiphysics</li>
+        </ul>
+      </div>
+    </div>
   </main>
 
   <footer class="footer">
