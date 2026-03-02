@@ -11,7 +11,8 @@
   />
   <link rel="stylesheet" href="style.css" />
   <script src="gallery-zoom.js" defer></script>
-</head>
+    </head>
+    <link rel="icon" type="image/png" href="favicon.png" />
 
 <body>
   <nav class="section-nav">
@@ -138,7 +139,7 @@
       <h3>Analytical model (medium math, big intuition)</h3>
       <p>
         I modeled the jacket as a series of thermal resistances: conduction through layers plus convection to ambient air.
-        The goal wasn’t to drown the page in equations — it was to keep the structure readable and make the dominant effects obvious.
+        
       </p>
 
       <div class="callout">
@@ -178,18 +179,14 @@
         <h4>How I interpret COMSOL in the comparison</h4>
         <p>
           In this project, the simplified COMSOL setup behaves like an <strong>upper bound</strong> on heat loss because it doesn’t fully represent insulation from the air gap and jacket layers.
-          That mismatch is useful — it highlights which resistances matter most, and where modeling detail actually changes the answer.
+          That mismatch is useful; it highlights which resistances matter most, and where modeling detail actually changes the answer.
         </p>
       </div>
-
-      <p>
-        The biggest takeaway: simulation is powerful when you’re explicit about what you included, what you ignored, and why.
-      </p>
     </section>
 
     <!-- EXPERIMENT -->
     <section class="case-section">
-      <h3>Experimental validation (scrappy, but real)</h3>
+      <h3>Experimental validation</h3>
       <p>
         To validate the predictions, I placed thermistors on both sides of the jacket and logged temperature data while standing outside and while running.
         The setup was scrappy (tape + wires + cold air + movement), but it produced a measurable temperature gradient that could be compared against the models.
@@ -219,13 +216,13 @@
     <section class="case-section">
       <h3>Results + what the comparison actually means</h3>
       <p>
-        The point wasn’t one perfect number — it was building a consistent picture from three approaches and understanding what each one is telling you.
+        While the analytical model, COMSOL simulation, and experimental data didn’t perfectly align (and weren’t expected to), the comparison was still valuable for understanding which assumptions mattered and where the model was strong vs sensitive.
       </p>
 
       <ul class="process-steps">
         <li><strong>Analytical model:</strong> grounded estimate + makes dominant resistances obvious</li>
         <li><strong>COMSOL:</strong> visualization + convection behavior + sensitivity to assumptions</li>
-        <li><strong>Experiment:</strong> reality check — shows how sensor limits and messy boundary conditions affect what you can conclude</li>
+        <li><strong>Experiment:</strong> real work check; shows how sensor limits and messy boundary conditions affect what you can conclude</li>
       </ul>
 
       <div class="callout">
@@ -264,7 +261,7 @@
     <section class="case-section">
       <h3>Conclusions</h3>
       <p>
-        This project was a good reminder that engineering isn’t just calculation or simulation — it’s making assumptions, testing reality, and being able to explain what changes the result.
+        This project was a good reminder that engineering isn’t just making a perfect analytical model or perfect simulation, but rather it’s making assumptions, testing reality, and being able to explain what changes the result.
         The most useful outcome was learning where the model is strong, where it’s sensitive, and what the data can (and can’t) support.
       </p>
 
@@ -277,9 +274,6 @@
         </ul>
       </div>
 
-      <p>
-        Overall: model + simulate + measure is a powerful workflow — and convection is a humbling reminder that the boundary conditions matter.
-      </p>
     </section>
 
   </main>
