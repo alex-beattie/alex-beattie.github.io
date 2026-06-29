@@ -9,46 +9,89 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
-    <link rel="icon" type="image/png" href="favicon.png" />
 <body>
   <nav class="section-nav">
     <div class="nav-brand">Alex Beattie's Portfolio</div>
     <a href="index.html">Home</a>
     <a href="projects.html" class="active">Projects</a>
     <a href="skills.html">Skills</a>
+    <a href="about.html">About Me</a>
     <a href="resume.html">Resume</a>
   </nav>
 
   <main class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="project-cards">
-      <a class="project-card" href="project1.html">
-        <span class="project-tag engineering">Engineering Design</span>
-        <img src="images/DallasDetangulator/1.jpg" alt="Project 1 Title">
-        <div class="project-card-content">
+    <div class="project-feed">
+      <a class="project-post" href="project1.html">
+        <div class="project-post-meta"><span class="project-post-topic">Engineering Design</span><span class="project-post-time">Apr 2024</span></div>
+        <div class="tweet-content project-post-content">
           <h3>Detangulator 5000</h3>
           <p>Assistive device designed to help a client with cerebral palsy independently apply hair detangler through improved positioning and low-force actuation.</p>
         </div>
-      </a>
-      <a class="project-card" href="project2.html">
-        <span class="project-tag engineering">Electronics & Controls</span>
-        <img src="images/ME30 Final/robot.jpg" alt="Cooperative Payload Balancing Robot">
-        <div class="project-card-content">
-          <h3>Cooperative Payload Balancing Robot</h3>
-          <p>Designed and built a Raspberry Pi–controlled robot capable of measuring unknown payload mass using a load cell and placing it to balance a seesaw with another robot.</p>
+        <img class="project-post-image" src="images/DallasDetangulator/1.jpg" alt="Detangulator 5000">
+        <div class="tweet-footer project-post-footer">
+          <span class="nav-link">View project</span>
+          <div class="project-post-actions">
+            <button class="action" aria-label="Comment">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </button>
+            <button class="action" aria-label="Like">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg>
+            </button>
+            <button class="action" aria-label="Share">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+            </button>
+          </div>
         </div>
       </a>
 
-      <a class="project-card" href="project3.html">
-        <span class="project-tag engineering">Thermal Fluids</span>
-        <img src="images/JacketHeatLoss/4.png" alt="Jacket Heat Loss Analysis">
-        <div class="project-card-content">
+      <a class="project-post" href="project2.html">
+        <div class="project-post-meta"><span class="project-post-topic">Electronics & Controls</span><span class="project-post-time">Dec 2025</span></div>
+        <div class="tweet-content project-post-content">
+          <h3>Cooperative Payload Balancing Robot</h3>
+          <p>Designed and built a Raspberry Pi–controlled robot capable of measuring unknown payload mass using a load cell and placing it to balance a seesaw with another robot.</p>
+        </div>
+        <img class="project-post-image" src="images/ME30 Final/robot.jpg" alt="Cooperative Payload Balancing Robot">
+        <div class="tweet-footer project-post-footer">
+          <span class="nav-link">View project</span>
+          <div class="project-post-actions">
+            <button class="action" aria-label="Comment">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </button>
+            <button class="action" aria-label="Like">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg>
+            </button>
+            <button class="action" aria-label="Share">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+            </button>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-post" href="project3.html">
+        <div class="project-post-meta"><span class="project-post-topic">Thermal Fluids</span><span class="project-post-time">Dec 2025</span></div>
+        <div class="tweet-content project-post-content">
           <h3>Jacket Heat Loss Analysis</h3>
           <p>Combined analytical modeling, COMSOL simulation, and experimental validation to estimate heat loss through a jacket in different conditions.</p>
         </div>
+        <img class="project-post-image" src="images/JacketHeatLoss/4.png" alt="Jacket Heat Loss Analysis">
+        <div class="tweet-footer project-post-footer">
+          <span class="nav-link">View project</span>
+          <div class="project-post-actions">
+            <button class="action" aria-label="Comment">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </button>
+            <button class="action" aria-label="Like">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg>
+            </button>
+            <button class="action" aria-label="Share">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+            </button>
+          </div>
+        </div>
       </a>
-    
+    </div>
   </main>
 
   <footer class="footer">
