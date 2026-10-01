@@ -1,288 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jacket Heat Loss: Model + COMSOL + Experiment — Alex Beattie</title>
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Inter:wght@400;600;700&display=swap" 
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="style.css" />
-  <script src="gallery-zoom.js" defer></script>
-    </head>
-    <link rel="icon" type="image/png" href="favicon.png" />
-
-<body>
-  <nav class="section-nav">
-    <div class="nav-brand">Alex Beattie's Portfolio</div>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="skills.html">Skills</a>
-    <a href="about.html">About Me</a>
-    <a href="resume.html">Resume</a>
-  </nav>
-
-  <main class="section project-detail" id="project3">
-
-    <!-- HERO -->
-    <header class="project-hero">
-      <div class="project-hero-top">
-        <h1 class="project-title">Jacket Heat Loss: Model + COMSOL + Experiment</h1>
-        <p class="project-subtitle">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Jacket Heat Loss: Model + COMSOL + Experiment | Alex Beattie</title><link rel="icon" href="favicon.png"><link rel="stylesheet" href="home.css"><link rel="stylesheet" href="pages.css"><script src="gallery-zoom.js" defer></script></head>
+<body class="inner-page"><a class="skip-link" href="#main">Skip to content</a><header class="topbar">
+<nav aria-label="Main navigation" class="nav-inner">
+<a aria-label="Alex Beattie home" class="wordmark" href="index.html">ab<span> / </span><small>in the making</small></a>
+<div class="nav-links"><a href="index.html">Home</a><a aria-current="page" href="projects.html">Projects</a><a href="about.html">About</a><a href="resume.html">Resume</a></div>
+<a class="contact-button" href="mailto:Alexander.Beattie@tufts.edu">Say hello <span aria-hidden="true">↗</span></a>
+</nav>
+</header><div class="page inner-layout"><aside class="page-sidebar"><a class="mini-profile" href="index.html"><img src="images/home/avatar.webp" alt="" width="52" height="52"><span><strong>Alexander Beattie</strong><small>Tufts · Mechanical Engineering</small></span></a><nav class="panel side-menu" aria-label="Portfolio pages"><a href="index.html">Home</a><a href="projects.html" aria-current="page">Projects</a><a href="about.html">About me</a><a href="skills.html">Tools & skills</a><a href="resume.html">Resume</a></nav><nav class="panel contents-menu" aria-label="On this page"><h2>In this project</h2><a href="#section-1">Quick project description</a><a href="#section-2">Longer project description</a><a href="#section-3">Iterative design process</a><a href="#section-4">Analytical model (medium math, big intuition)</a><a href="#section-5">COMSOL simulation (engineering tradeoffs)</a><a href="#section-6">Experimental validation</a><a href="#section-7">Results + what the comparison actually means</a><a href="#section-8">Engineering skills used</a><a href="#section-9">Conclusions</a></nav><div class="side-contact"><a href="mailto:Alexander.Beattie@tufts.edu">Get in touch ↗</a><p>Somerville, MA<br>BSME · Class of 2027</p></div></aside><main id="main" tabindex="-1"><div class="breadcrumb"><a href="projects.html">Projects</a><span>/</span><span>Case study</span></div><article class="case-study">
+<!-- HERO -->
+<header class="project-hero">
+<div class="project-hero-top">
+<h1 class="project-title">Jacket Heat Loss: Model + COMSOL + Experiment</h1>
+<p class="project-subtitle">
           Thermal Fluid Systems II — How much heat do you lose standing still vs running on a cold day?
         </p>
-
-        <div class="project-meta">
-          <span class="meta-chip">Thermal Fluids II</span>
-          <span class="meta-chip">Analytical heat transfer model</span>
-          <span class="meta-chip">COMSOL simulation</span>
-          <span class="meta-chip">Thermistors + calibration</span>
-          <span class="meta-chip">Data acquisition + filtering</span>
-          <span class="meta-chip">Model vs reality comparison</span>
-        </div>
-      </div>
-
-      <div class="project-hero-blurb">
-        <p>
+<div class="project-meta">
+<span class="meta-chip">Thermal Fluids II</span>
+<span class="meta-chip">Analytical heat transfer model</span>
+<span class="meta-chip">COMSOL simulation</span>
+<span class="meta-chip">Thermistors + calibration</span>
+<span class="meta-chip">Data acquisition + filtering</span>
+<span class="meta-chip">Model vs reality comparison</span>
+</div>
+</div>
+<div class="project-hero-blurb">
+<p>
           I modeled heat loss through a winter jacket using a thermal resistance network, then compared it to a COMSOL setup exploring airflow-driven convection.
           To ground it in reality, I loaded up my jacket with thermistors on both sides and logged temperature data outside in the cold, both standing still and while running.
           The most interesting part for me was reconciling where the model, simulation, and measurements agreed, and where they didn’t.
         </p>
-      </div>
-
-      <div class="project-quickfacts">
-        <div class="quickfact">
-          <div class="q-label">Big question</div>
-          <div class="q-value">How much heat do I lose through a jacket in the cold?</div>
-        </div>
-        <div class="quickfact">
-          <div class="q-label">Two cases</div>
-          <div class="q-value">Standing still vs running (forced convection)</div>
-        </div>
-        <div class="quickfact">
-          <div class="q-label">How I answered it</div>
-          <div class="q-value">Analytical model + COMSOL + thermistor measurements</div>
-        </div>
-        <div class="quickfact">
-          <div class="q-label">Best insight</div>
-          <div class="q-value">The trapped air gap matters more than the jacket material</div>
-        </div>
-      </div>
-    </header>
-
-    <!-- GALLERY -->
-    <div class="gallery">
-      <img class="gallery-main" src="images/JacketHeatLoss/1.png" alt="Jacket heat loss project overview">
-
-      <div class="gallery-caption" aria-live="polite">
+</div>
+<div class="project-quickfacts">
+<div class="quickfact">
+<div class="q-label">Big question</div>
+<div class="q-value">How much heat do I lose through a jacket in the cold?</div>
+</div>
+<div class="quickfact">
+<div class="q-label">Two cases</div>
+<div class="q-value">Standing still vs running (forced convection)</div>
+</div>
+<div class="quickfact">
+<div class="q-label">How I answered it</div>
+<div class="q-value">Analytical model + COMSOL + thermistor measurements</div>
+</div>
+<div class="quickfact">
+<div class="q-label">Best insight</div>
+<div class="q-value">The trapped air gap matters more than the jacket material</div>
+</div>
+</div>
+</header>
+<!-- GALLERY -->
+<div class="gallery">
+<img alt="Jacket heat loss project overview" class="gallery-main" src="images/JacketHeatLoss/1.png"/>
+<div aria-live="polite" class="gallery-caption">
         Cover Image
       </div>
-
-      <div class="gallery-thumbs">
-        <img src="images/JacketHeatLoss/1.png"
-             alt="Jacket heat loss project overview"
-             data-caption="Project Cover Image">
-
-        <img src="images/JacketHeatLoss/3.png"
-             alt="COMSOL temperature field"
-             data-caption="COMSOL airflow/velocity visualization: standing case treated as natural convection with a low external convection coefficient.">
-
-        <img src="images/JacketHeatLoss/4.png"
-             alt="COMSOL airflow / velocity visualization"
-             data-caption="COMSOL airflow/velocity visualization: running case treated as forced convection from increased relative wind speed.">
-
-        <img src="images/JacketHeatLoss/5.png"
-             alt="Temperature vs time data plot"
-             data-caption="Temperature data over time: calibrated thermistors + simple filtering to make the comparison meaningful (sensor accuracy was the limiting factor).">
-      </div>
-    </div>
-
-    <!-- QUICK DESCRIPTION -->
-    <section class="case-section">
-      <h3>Quick project description</h3>
-      <p>
+<div class="gallery-thumbs">
+<img alt="Jacket heat loss project overview" data-caption="Project Cover Image" loading="lazy" src="images/JacketHeatLoss/1.png"/>
+<img alt="COMSOL temperature field" data-caption="COMSOL airflow/velocity visualization: standing case treated as natural convection with a low external convection coefficient." loading="lazy" src="images/JacketHeatLoss/3.png"/>
+<img alt="COMSOL airflow / velocity visualization" data-caption="COMSOL airflow/velocity visualization: running case treated as forced convection from increased relative wind speed." loading="lazy" src="images/JacketHeatLoss/4.png"/>
+<img alt="Temperature vs time data plot" data-caption="Temperature data over time: calibrated thermistors + simple filtering to make the comparison meaningful (sensor accuracy was the limiting factor)." loading="lazy" src="images/JacketHeatLoss/5.png"/>
+</div>
+</div>
+<!-- QUICK DESCRIPTION -->
+<section class="case-section" id="section-1">
+<h2>Quick project description</h2>
+<p>
         Built an analytical heat transfer model to estimate heat flux through my jacket and predicted inside/outside surface temperatures
         for standing still and running. Then I built a COMSOL simulation for comparison and validated with measurements using thermistors
         (calibrated + filtered) placed on both sides of the jacket while outside in the cold.
       </p>
-    </section>
-
-    <!-- LONGER DESCRIPTION -->
-    <section class="case-section">
-      <h3>Longer project description</h3>
-      <p>
+</section>
+<!-- LONGER DESCRIPTION -->
+<section class="case-section" id="section-2">
+<h2>Longer project description</h2>
+<p>
         The assignment was to take a real scenario (running in the cold with a jacket) and quantify it using multiple methods — not just compute an answer,
         but build assumptions, test them, and explain what changes between standing still and running.
       </p>
-      <p>
+<p>
         I modeled conduction through layers (skin/air gap/jacket) and convection to ambient air, then compared predictions to a COMSOL setup focused on airflow-driven convection behavior.
         Finally, I collected real temperature data by placing thermistors on the inside and outside surfaces of the jacket while standing outside and while running.
       </p>
-    </section>
-
-    <!-- ITERATIVE PROCESS -->
-    <section class="case-section">
-      <h3>Iterative design process</h3>
-      <ol class="process-steps">
-        <li><strong>Frame the problem:</strong> define what “heat loss” means here (heat flux) and what we can directly measure (surface temperatures).</li>
-        <li><strong>Build an analytical model:</strong> thermal resistance network + estimated properties + convection assumptions for standing vs running.</li>
-        <li><strong>Find what dominates:</strong> the trapped air layer is a major driver of insulation performance.</li>
-        <li><strong>Simulate in COMSOL:</strong> started broader, then simplified to focus on external convection behavior under time/convergence constraints.</li>
-        <li><strong>Collect data:</strong> calibrate thermistors, filter noise, log inside vs outside temperatures for both cases.</li>
-        <li><strong>Compare + interpret:</strong> use the disagreement between methods as information, not failure — assumptions show up fast in convection problems.</li>
-      </ol>
-    </section>
-
-    <!-- ANALYTICAL MODEL -->
-    <section class="case-section">
-      <h3>Analytical model (medium math, big intuition)</h3>
-      <p>
+</section>
+<!-- ITERATIVE PROCESS -->
+<section class="case-section" id="section-3">
+<h2>Iterative design process</h2>
+<ol class="process-steps">
+<li><strong>Frame the problem:</strong> define what “heat loss” means here (heat flux) and what we can directly measure (surface temperatures).</li>
+<li><strong>Build an analytical model:</strong> thermal resistance network + estimated properties + convection assumptions for standing vs running.</li>
+<li><strong>Find what dominates:</strong> the trapped air layer is a major driver of insulation performance.</li>
+<li><strong>Simulate in COMSOL:</strong> started broader, then simplified to focus on external convection behavior under time/convergence constraints.</li>
+<li><strong>Collect data:</strong> calibrate thermistors, filter noise, log inside vs outside temperatures for both cases.</li>
+<li><strong>Compare + interpret:</strong> use the disagreement between methods as information, not failure — assumptions show up fast in convection problems.</li>
+</ol>
+</section>
+<!-- ANALYTICAL MODEL -->
+<section class="case-section" id="section-4">
+<h2>Analytical model (medium math, big intuition)</h2>
+<p>
         I modeled the jacket as a series of thermal resistances: conduction through layers plus convection to ambient air.
         
       </p>
-
-      <div class="callout">
-        <h4>Key insight</h4>
-        <p>
+<div class="callout">
+<h4>Key insight</h4>
+<p>
           The air gap inside the jacket contributes more thermal resistance than the jacket material itself.
           In practice, insulation performance is heavily influenced by how well you trap still air.
         </p>
-      </div>
-
-      <p>
+</div>
+<p>
         I compared:
       </p>
-      <ul class="process-steps">
-        <li><strong>Standing still:</strong> natural convection on the outside surface</li>
-        <li><strong>Running:</strong> forced convection from increased relative wind speed</li>
-      </ul>
-
-      <p>
+<ul class="process-steps">
+<li><strong>Standing still:</strong> natural convection on the outside surface</li>
+<li><strong>Running:</strong> forced convection from increased relative wind speed</li>
+</ul>
+<p>
         The model predicts a noticeable increase in heat flux when running because the outer convection coefficient increases quickly with velocity.
       </p>
-    </section>
-
-    <!-- COMSOL -->
-    <section class="case-section">
-      <h3>COMSOL simulation (engineering tradeoffs)</h3>
-      <p>
+</section>
+<!-- COMSOL -->
+<section class="case-section" id="section-5">
+<h2>COMSOL simulation (engineering tradeoffs)</h2>
+<p>
         I used COMSOL to explore airflow and the resulting convection behavior, then compared it to my analytical assumptions.
         I initially tried a more complete multiphysics setup, but with a tight timeline I ran into convergence/complexity issues.
       </p>
-
-      <p>
+<p>
         I simplified the simulation to focus on external forced convection so I could still extract useful trends and use the simulation as a comparison tool.
       </p>
-
-      <div class="callout">
-        <h4>How I interpret COMSOL in the comparison</h4>
-        <p>
+<div class="callout">
+<h4>How I interpret COMSOL in the comparison</h4>
+<p>
           In this project, the simplified COMSOL setup behaves like an <strong>upper bound</strong> on heat loss because it doesn’t fully represent insulation from the air gap and jacket layers.
           That mismatch is useful; it highlights which resistances matter most, and where modeling detail actually changes the answer.
         </p>
-      </div>
-    </section>
-
-    <!-- EXPERIMENT -->
-    <section class="case-section">
-      <h3>Experimental validation</h3>
-      <p>
+</div>
+</section>
+<!-- EXPERIMENT -->
+<section class="case-section" id="section-6">
+<h2>Experimental validation</h2>
+<p>
         To validate the predictions, I placed thermistors on both sides of the jacket and logged temperature data while standing outside and while running.
         The setup was scrappy (tape + wires + cold air + movement), but it produced a measurable temperature gradient that could be compared against the models.
       </p>
-
-      <p>
+<p>
         The hardest part was sensor accuracy. The thermistors were cheap and high-tolerance, so raw readings weren’t meaningful without calibration.
         A lot of the work went into making sure the data was trustworthy enough to compare.
       </p>
-
-      <div class="callout">
-        <h4>Data pipeline</h4>
-        <ul class="process-steps">
-          <li><strong>Calibration:</strong> use temperature reference points to map thermistor readings to actual values</li>
-          <li><strong>Cleanup:</strong> simple filtering to reduce noise without over-processing the signal</li>
-          <li><strong>Logging:</strong> time-stamped inside vs outside surface temperatures for both trials</li>
-          <li><strong>Comparison:</strong> use measured ΔT to estimate heat flux and compare to analytical + COMSOL predictions</li>
-        </ul>
-      </div>
-
-      <p>
+<div class="callout">
+<h4>Data pipeline</h4>
+<ul class="process-steps">
+<li><strong>Calibration:</strong> use temperature reference points to map thermistor readings to actual values</li>
+<li><strong>Cleanup:</strong> simple filtering to reduce noise without over-processing the signal</li>
+<li><strong>Logging:</strong> time-stamped inside vs outside surface temperatures for both trials</li>
+<li><strong>Comparison:</strong> use measured ΔT to estimate heat flux and compare to analytical + COMSOL predictions</li>
+</ul>
+</div>
+<p>
         The experiment made it clear how sensitive convection problems are to boundary conditions, thermal contact quality, and environmental variability.
       </p>
-    </section>
-
-    <!-- RESULTS -->
-    <section class="case-section">
-      <h3>Results + what the comparison actually means</h3>
-      <p>
+</section>
+<!-- RESULTS -->
+<section class="case-section" id="section-7">
+<h2>Results + what the comparison actually means</h2>
+<p>
         While the analytical model, COMSOL simulation, and experimental data didn’t perfectly align (and weren’t expected to), the comparison was still valuable for understanding which assumptions mattered and where the model was strong vs sensitive.
       </p>
-
-      <ul class="process-steps">
-        <li><strong>Analytical model:</strong> grounded estimate + makes dominant resistances obvious</li>
-        <li><strong>COMSOL:</strong> visualization + convection behavior + sensitivity to assumptions</li>
-        <li><strong>Experiment:</strong> real work check; shows how sensor limits and messy boundary conditions affect what you can conclude</li>
-      </ul>
-
-      <div class="callout">
-        <h4>Main takeaway</h4>
-        <p>
+<ul class="process-steps">
+<li><strong>Analytical model:</strong> grounded estimate + makes dominant resistances obvious</li>
+<li><strong>COMSOL:</strong> visualization + convection behavior + sensitivity to assumptions</li>
+<li><strong>Experiment:</strong> real work check; shows how sensor limits and messy boundary conditions affect what you can conclude</li>
+</ul>
+<div class="callout">
+<h4>Main takeaway</h4>
+<p>
           In heat transfer (especially convection), the “answer” is only as good as the assumptions and boundary conditions behind it.
           Comparing methods is what turns the result into something you can trust.
         </p>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="case-section">
-      <h3>Engineering skills used</h3>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h4>Heat transfer modeling</h4>
-          <p>Thermal resistance networks, conduction vs convection reasoning, and building a readable model from assumptions.</p>
-        </div>
-        <div class="skill-card">
-          <h4>Simulation (COMSOL)</h4>
-          <p>Setting up and interpreting a multiphysics model, and simplifying responsibly under time/convergence constraints.</p>
-        </div>
-        <div class="skill-card">
-          <h4>Experimental instrumentation</h4>
-          <p>Thermistors, calibration, and designing measurements that connect back to model outputs.</p>
-        </div>
-        <div class="skill-card">
-          <h4>Data acquisition + processing</h4>
-          <p>Logging, filtering noisy sensor data, and extracting useful comparisons from imperfect measurements.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONCLUSION -->
-    <section class="case-section">
-      <h3>Conclusions</h3>
-      <p>
+</div>
+</section>
+<!-- SKILLS -->
+<section class="case-section" id="section-8">
+<h2>Engineering skills used</h2>
+<div class="skills-grid">
+<div class="skill-card">
+<h4>Heat transfer modeling</h4>
+<p>Thermal resistance networks, conduction vs convection reasoning, and building a readable model from assumptions.</p>
+</div>
+<div class="skill-card">
+<h4>Simulation (COMSOL)</h4>
+<p>Setting up and interpreting a multiphysics model, and simplifying responsibly under time/convergence constraints.</p>
+</div>
+<div class="skill-card">
+<h4>Experimental instrumentation</h4>
+<p>Thermistors, calibration, and designing measurements that connect back to model outputs.</p>
+</div>
+<div class="skill-card">
+<h4>Data acquisition + processing</h4>
+<p>Logging, filtering noisy sensor data, and extracting useful comparisons from imperfect measurements.</p>
+</div>
+</div>
+</section>
+<!-- CONCLUSION -->
+<section class="case-section" id="section-9">
+<h2>Conclusions</h2>
+<p>
         This project was a good reminder that engineering isn’t just making a perfect analytical model or perfect simulation, but rather it’s making assumptions, testing reality, and being able to explain what changes the result.
         The most useful outcome was learning where the model is strong, where it’s sensitive, and what the data can (and can’t) support.
       </p>
-
-      <div class="callout">
-        <h4>If I had more time / budget</h4>
-        <ul class="process-steps">
-          <li><strong>Go harder on COMSOL:</strong> build a simulation I’m prouder of that better matches the analytical model structure</li>
-          <li><strong>Better experimental data:</strong> higher-quality sensors, better thermal contact method, and a cleaner wearable setup</li>
-          <li><strong>More controlled testing:</strong> repeat trials + improved estimates for wind speed and convection conditions</li>
-        </ul>
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div style="font-weight:700;font-size:1.1em;">Alexander Beattie</div>
-    <div><a href="mailto:Alexander.Beattie@tufts.edu">Alexander.Beattie@tufts.edu</a> &nbsp;|&nbsp; <a href="tel:5162879978">516-287-9978</a></div>
-    <div style="margin-top:0.5em;font-size:0.95em;color:#708296;">&copy; 2026 Alexander Beattie</div>
-  </footer>
-</body>
-</html>
+<div class="callout">
+<h4>If I had more time / budget</h4>
+<ul class="process-steps">
+<li><strong>Go harder on COMSOL:</strong> build a simulation I’m prouder of that better matches the analytical model structure</li>
+<li><strong>Better experimental data:</strong> higher-quality sensors, better thermal contact method, and a cleaner wearable setup</li>
+<li><strong>More controlled testing:</strong> repeat trials + improved estimates for wind speed and convection conditions</li>
+</ul>
+</div>
+</section>
+</article><div class="case-end"><a href="projects.html">« Back to all projects</a><a href="mailto:Alexander.Beattie@tufts.edu">Ask me about this project ↗</a></div></main></div><footer class="site-footer"><span>© 2026 Alexander Beattie</span><div><a href="mailto:Alexander.Beattie@tufts.edu">Email</a> · <a href="https://www.linkedin.com/in/alexander-beattie-tufts" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="resume.html">Resume</a></div></footer></body></html>

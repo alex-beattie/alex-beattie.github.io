@@ -1,0 +1,125 @@
+/* Interior pages share the approved homepage palette and navigation. */
+.inner-page { font-family: "Lucida Grande", Tahoma, Verdana, sans-serif; }
+.inner-layout { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 26px; align-items: start; }
+.inner-layout main { min-width: 0; }
+.inner-page .panel { border-radius: 3px; box-shadow: none; }
+.page-sidebar { position: sticky; top: 86px; }
+.mini-profile { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; color: var(--ink); }
+.mini-profile img { border: 3px solid white; outline: 1px solid #c5d5df; border-radius: 3px; object-fit: cover; }
+.mini-profile strong { display: block; font-size: 12px; }
+.mini-profile small { display: block; font-size: 10px; color: var(--muted); margin-top: 3px; }
+.side-menu { margin-bottom: 20px; }
+.side-menu a { display: block; border-bottom: 1px solid #dce6ed; padding: 10px 13px; font-size: 12px; background: #f8fbfd; }
+.side-menu a:last-child { border-bottom: 0; }
+.side-menu a[aria-current] { background: #e4eff6; color: #254f69; font-weight: bold; border-left: 3px solid #387da5; padding-left: 10px; }
+.side-menu a:hover { background: #edf5fa; }
+.side-contact { padding: 0 12px; font-size: 11px; color: var(--muted); }
+.side-contact p { line-height: 1.8; }
+.page-heading { margin: 0 0 24px; padding-bottom: 16px; border-bottom: 1px solid #bdced9; }
+.page-heading h1 { font: bold 27px/1.2 "Trebuchet MS", Tahoma, sans-serif; letter-spacing: -.4px; }
+.page-heading p { margin: 9px 0 0; color: var(--muted); font-size: 13px; }
+.inner-page .project-card { max-width: 760px; }
+.inner-page .filter-bar { max-width: 760px; }
+.inner-page .project-image img { max-height: 450px; }
+.inner-page .analysis-image img { max-height: 340px; }
+.breadcrumb { display: flex; gap: 12px; font-size: 11px; color: var(--muted); margin-bottom: 16px; }
+.project-hero, .gallery, .case-section { background: #fff; border: 1px solid var(--line); border-radius: 3px; margin: 0 0 20px; }
+.project-hero { padding: 24px; }
+.project-title { font: bold 28px/1.2 "Trebuchet MS", Tahoma, sans-serif; color: #27495e; letter-spacing: -.3px; margin: 0 0 10px; }
+.project-subtitle { color: var(--muted); font-size: 13px; margin: 0 0 15px; }
+.project-meta { display: flex; flex-wrap: wrap; gap: 6px 0; border-top: 1px solid #e1e9ee; border-bottom: 1px solid #e1e9ee; padding: 10px 0; font-size: 11px; color: #557489; }
+.meta-chip { padding: 0 12px; border-right: 1px solid #d5e1e8; }
+.meta-chip:first-child { padding-left: 0; }
+.meta-chip:last-child { border-right: 0; }
+.project-hero-blurb p { font-size: 14px; line-height: 1.75; margin: 17px 0; }
+.project-quickfacts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 22px; }
+.quickfact { padding: 12px 0; border-top: 1px dotted #c7d8e3; }
+.q-label { font-size: 10px; color: #69818f; margin-bottom: 4px; }
+.q-value { font-size: 12px; color: #355a70; }
+.contents-menu { margin: 0 0 20px; background: #f8fbfd; }
+.contents-menu h2, .module-heading { margin: 0; background: linear-gradient(#edf4f8,#e1ecf3); border-bottom: 1px solid #c5d5df; padding: 9px 14px; font-size: 12px; color: #355b74; }
+.contents-menu a { display: block; font-size: 11px; padding: 7px 12px; line-height: 1.4; border-bottom: 1px dotted #d5e1e8; }
+.contents-menu a:last-child { border-bottom: 0; }
+.gallery { padding: 14px; }
+.gallery-main { display: block; width: 100%; height: 430px; object-fit: contain; background: #f6f8fa; border: 1px solid #e0e8ed; cursor: zoom-in; }
+.gallery-caption { font-size: 11px; color: var(--muted); text-align: center; margin: 12px auto; max-width: 650px; }
+.gallery-thumbs { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.gallery-thumbs button { background: #f3f7f9; border: 2px solid transparent; padding: 2px; border-radius: 2px; }
+.gallery-thumbs button[aria-pressed="true"] { border-color: #327da9; }
+.gallery-thumbs img { display: block; width: 80px; height: 58px; object-fit: cover; }
+.gallery-help { font-size: 10px; color: var(--muted); text-align: center; margin: 10px 0 0; }
+.case-section { padding: 0 24px 22px; scroll-margin-top: 85px; }
+.case-section > h2 { margin: 0 -24px 20px; padding: 12px 24px; border-bottom: 1px solid #d9e4eb; background: #f3f7fa; font: bold 19px/1.4 "Trebuchet MS", Tahoma, sans-serif; color: #355b74; }
+.case-section p, .case-section li { font-size: 13px; line-height: 1.8; }
+.case-section p { margin: 0 0 14px; }
+.case-section p:last-child { margin-bottom: 0; }
+.case-section ul, .case-section ol { padding-left: 22px; }
+.case-section li { margin-bottom: 9px; }
+.case-section h4 { margin: 0 0 7px; font-size: 13px; }
+.skills-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.skill-card { border-top: 1px dotted #cbdbe4; padding-top: 13px; }
+.callout { margin-top: 20px; padding: 15px; border-left: 3px solid #80a4ba; background: #f2f7fa; }
+.case-end { display: flex; justify-content: space-between; gap: 15px; font-size: 12px; padding: 4px 0 22px; }
+.site-footer { max-width: 1120px; margin: 24px auto 0; padding: 18px 20px 30px; border-top: 1px solid #c1d2dd; display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-size: 11px; }
+.about-photo { width: 100%; height: 240px; object-fit: cover; display: block; }
+.about-intro, .info-section { margin-bottom: 20px; }
+.reading-content { padding: 22px; }
+.reading-content h2 { font: bold 22px "Trebuchet MS",Tahoma,sans-serif; margin: 0 0 13px; color: #355b74; }
+.reading-content p, .experience-row p { font-size: 13px; line-height: 1.8; margin: 0 0 13px; }
+.reading-content p:last-child { margin-bottom: 0; }
+.experience-row { padding: 20px 22px; border-bottom: 1px solid #e0e9ee; }
+.experience-row:last-child { border-bottom: 0; }
+.experience-row h3 { font: bold 17px "Trebuchet MS",Tahoma,sans-serif; margin: 0 0 6px; }
+.experience-row .role { color: #647d8b; font-size: 11px; }
+.experience-row p:last-child { margin-bottom: 0; }
+.skills-modules { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.skills-modules .info-section { margin: 0; display: flex; flex-direction: column; }
+.skills-table { padding: 8px 17px 17px; margin: 0; flex: 1; }
+.skills-table dt { font-size: 11px; text-transform: none; letter-spacing: 0; color: #6b8290; margin-top: 12px; }
+.skills-table dd { margin: 4px 0 0; font-size: 12px; line-height: 1.7; }
+.resume-toolbar { display: flex; justify-content: space-between; gap: 20px; align-items: center; padding: 20px; border-bottom: 1px solid var(--line); }
+.resume-toolbar h2 { font-size: 16px; margin: 0 0 5px; }
+.resume-toolbar p { margin: 0; font-size: 11px; color: var(--muted); }
+.resume-document { width: 100%; height: 850px; border: 0; display: block; background: #f1f5f8; }
+.resume-help { padding: 0 20px; font-size: 12px; }
+.image-dialog { width: min(1100px,94vw); max-width: 94vw; max-height: 94vh; padding: 16px; border: 1px solid #c0d1dd; border-radius: 4px; background: #f8fbfd; color: var(--ink); }
+.image-dialog::backdrop { background: #172e40db; }
+.dialog-toolbar { display: flex; align-items: center; gap: 8px; padding-bottom: 12px; }
+.dialog-toolbar strong { margin-right: auto; font-size: 12px; }
+.dialog-toolbar button { padding: 6px 10px; background: #e5eff5; border: 1px solid #bbcedb; border-radius: 3px; color: #305d78; }
+.dialog-image-area { overflow: auto; max-height: 70vh; text-align: center; }
+.dialog-image { display: block; width: 100%; height: 65vh; object-fit: contain; }
+.dialog-image.zoomed { width: 160%; max-width: none; height: auto; }
+.dialog-caption { font-size: 12px; margin: 12px 0 0; text-align: center; }
+@media (max-width: 900px) {
+  .inner-layout { grid-template-columns: 180px minmax(0,1fr); gap: 18px; }
+  .mini-profile { flex-direction: column; align-items: start; }
+  .skills-modules { grid-template-columns: 1fr; }
+  .gallery-main { height: 330px; }
+  .resume-toolbar { flex-wrap: wrap; }
+}
+@media (max-width: 700px) {
+  .inner-layout { display: block; }
+  .page-sidebar { position: static; }
+  .mini-profile, .side-contact, .contents-menu { display: none; }
+  .side-menu { display: flex; flex-wrap: wrap; margin-bottom: 22px; }
+  .side-menu a { flex: 1 0 auto; text-align: center; padding: 8px 9px; font-size: 11px; border-bottom: 0; }
+  .side-menu a[aria-current] { border-left: 0; border-bottom: 2px solid #387da5; padding-left: 9px; }
+  .page-heading h1 { font-size: 25px; }
+  .project-hero { padding: 18px; }
+  .project-title { font-size: 25px; }
+  .project-quickfacts, .skills-grid { grid-template-columns: 1fr; }
+  .gallery { padding: 9px; }
+  .gallery-main { height: 300px; }
+  .gallery-thumbs img { width: 62px; height: 48px; }
+  .case-section { padding: 0 18px 18px; }
+  .case-section > h2 { margin: 0 -18px 16px; padding: 11px 18px; }
+  .case-end, .site-footer { flex-wrap: wrap; }
+  .about-photo { height: 190px; }
+  .reading-content, .experience-row { padding: 18px; }
+  .resume-document { height: 65vh; min-height: 420px; }
+  .dialog-toolbar { flex-wrap: wrap; }
+}
+
+.resume-preview-link { display: block; padding: 15px; background: #edf2f6; }
+.resume-preview-image { display: block; width: 100%; height: auto; border: 1px solid #d5dfe6; }

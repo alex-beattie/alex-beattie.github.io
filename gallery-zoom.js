@@ -1,119 +1,73 @@
-// This script enables fullscreen, zoom, captions, and arrow-key navigation for project image galleries.
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.gallery').forEach(function(gallery) {
-    const mainImg = gallery.querySelector('.gallery-main');
-    if (!mainImg) return;
-
-    // Add zoom cursor
-    mainImg.style.cursor = 'zoom-in';
-
-    const captionEl = gallery.querySelector('.gallery-caption');
-    const thumbs = Array.from(gallery.querySelectorAll('.gallery-thumbs img'));
-
-    function setCaptionFromThumb(thumb) {
-      if (!captionEl) return;
-      const cap = thumb.getAttribute('data-caption') || thumb.alt || '';
-      captionEl.textContent = cap;
+document.querySelectorAll('.gallery').forEach(gallery => {
+  const main = gallery.querySelector('.gallery-main');
+  const caption = gallery.querySelector('.gallery-caption');
+  const thumbs = [...gallery.querySelectorAll('.gallery-thumbs img')];
+  if (!main || !thumbs.length) return;
+  let current = Math.max(0, thumbs.findIndex(image => image.src === main.src));
+  const buttons = thumbs.map((image, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.setAttribute('aria-label', `View image ${index + 1}: ${image.alt}`);
+    image.before(button);
+    button.append(image);
+    button.addEventListener('click', () => select(index));
+    return button;
+  });
+  function description() {
+    return thumbs[current].dataset.caption || thumbs[current].alt;
+  }
+  function select(index) {
+    current = (index + thumbs.length) % thumbs.length;
+    main.src = thumbs[current].src;
+    main.alt = thumbs[current].alt;
+    if (caption) caption.textContent = description();
+    buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === current)));
+  }
+  select(current);
+  main.tabIndex = 0;
+  main.setAttribute('role', 'button');
+  main.setAttribute('aria-label', 'Enlarge project image');
+  const hint = document.createElement('p');
+  hint.className = 'gallery-help';
+  hint.textContent = 'Select a thumbnail to browse. Select the large image to enlarge.';
+  gallery.append(hint);
+  function openImage() {
+    const dialog = document.createElement('dialog');
+    dialog.className = 'image-dialog';
+    dialog.setAttribute('aria-label', 'Project image viewer');
+    dialog.innerHTML = '<div class="dialog-toolbar"><strong>Project images</strong><button type="button" data-action="previous" aria-label="Previous image">←</button><button type="button" data-action="next" aria-label="Next image">→</button><button type="button" data-action="zoom" aria-pressed="false">Zoom</button><button type="button" data-action="close">Close ×</button></div><div class="dialog-image-area"><img class="dialog-image" alt=""></div><p class="dialog-caption" aria-live="polite"></p>';
+    document.body.append(dialog);
+    const image = dialog.querySelector('.dialog-image');
+    const zoom = dialog.querySelector('[data-action="zoom"]');
+    function update() {
+      image.src = main.src;
+      image.alt = main.alt;
+      image.classList.remove('zoomed');
+      zoom.setAttribute('aria-pressed', 'false');
+      dialog.querySelector('.dialog-caption').textContent = `${current + 1} / ${thumbs.length} · ${description()}`;
     }
-
-    function setMainByIndex(idx) {
-      if (!thumbs[idx]) return;
-      mainImg.src = thumbs[idx].src;
-      mainImg.setAttribute('data-gallery-idx', String(idx));
-      setCaptionFromThumb(thumbs[idx]);
+    function move(delta) { select(current + delta); update(); }
+    dialog.querySelector('[data-action="previous"]').onclick = () => move(-1);
+    dialog.querySelector('[data-action="next"]').onclick = () => move(1);
+    zoom.onclick = () => zoom.setAttribute('aria-pressed', String(image.classList.toggle('zoomed')));
+    dialog.querySelector('[data-action="close"]').onclick = () => dialog.close();
+    dialog.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        move(event.key === 'ArrowLeft' ? -1 : 1);
+      }
+    });
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => { dialog.remove(); main.focus(); });
+    update();
+    dialog.showModal();
+  }
+  main.addEventListener('click', openImage);
+  main.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openImage(); }
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      select(current + (event.key === 'ArrowLeft' ? -1 : 1));
     }
-
-    // Initialize index + caption
-    let initialIdx = thumbs.findIndex(t => t.src === mainImg.src);
-    if (initialIdx === -1) initialIdx = 0;
-    mainImg.setAttribute('data-gallery-idx', String(initialIdx));
-    if (thumbs[initialIdx]) setCaptionFromThumb(thumbs[initialIdx]);
-
-    // Thumb clicks
-    thumbs.forEach(function(thumb, idx) {
-      thumb.addEventListener('click', function() {
-        setMainByIndex(idx);
-      });
-      thumb.style.cursor = 'pointer';
-    });
-
-    // Keyboard navigation (left/right arrows) for this gallery's main image
-    document.addEventListener('keydown', function(e) {
-      if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA')) return;
-      let idx = parseInt(mainImg.getAttribute('data-gallery-idx') || '0', 10);
-      if (Number.isNaN(idx)) idx = 0;
-
-      if (e.key === 'ArrowRight') {
-        idx = (idx + 1) % thumbs.length;
-        setMainByIndex(idx);
-      } else if (e.key === 'ArrowLeft') {
-        idx = (idx - 1 + thumbs.length) % thumbs.length;
-        setMainByIndex(idx);
-      }
-    });
-
-    // Create overlay for fullscreen/zoom
-    mainImg.addEventListener('click', function() {
-      let overlay = document.createElement('div');
-      overlay.className = 'gallery-zoom-overlay';
-      overlay.innerHTML = `
-        <img src="${mainImg.src}" class="gallery-zoomed" alt="Zoomed image">
-        <div class="gallery-zoom-caption"></div>
-        <button class="gallery-zoom-close" title="Close">&times;</button>
-        <button class="gallery-zoom-in" title="Zoom in">+</button>
-        <button class="gallery-zoom-out" title="Zoom out">-</button>
-      `;
-      document.body.appendChild(overlay);
-
-      const zoomed = overlay.querySelector('.gallery-zoomed');
-      const overlayCaption = overlay.querySelector('.gallery-zoom-caption');
-
-      function syncOverlayCaption() {
-        const idx = thumbs.findIndex(t => t.src === zoomed.src);
-        if (idx >= 0) {
-          const cap = thumbs[idx].getAttribute('data-caption') || thumbs[idx].alt || '';
-          overlayCaption.textContent = cap;
-        } else {
-          overlayCaption.textContent = '';
-        }
-      }
-      syncOverlayCaption();
-
-      let scale = 1;
-      function setScale(s) {
-        scale = Math.max(1, Math.min(s, 5));
-        zoomed.style.transform = `scale(${scale})`;
-      }
-
-      function closeOverlay() {
-        overlay.remove();
-        document.removeEventListener('keydown', overlayNavHandler);
-      }
-
-      overlay.querySelector('.gallery-zoom-close').onclick = closeOverlay;
-      overlay.onclick = e => { if (e.target === overlay) closeOverlay(); };
-      overlay.querySelector('.gallery-zoom-in').onclick = e => { e.stopPropagation(); setScale(scale + 0.25); };
-      overlay.querySelector('.gallery-zoom-out').onclick = e => { e.stopPropagation(); setScale(scale - 0.25); };
-      setScale(1);
-
-      // Arrow key navigation in overlay
-      function overlayNavHandler(e) {
-        let idx = thumbs.findIndex(t => t.src === zoomed.src);
-        if (idx < 0) idx = 0;
-
-        if (e.key === 'ArrowRight') {
-          idx = (idx + 1) % thumbs.length;
-          zoomed.src = thumbs[idx].src;
-          syncOverlayCaption();
-        } else if (e.key === 'ArrowLeft') {
-          idx = (idx - 1 + thumbs.length) % thumbs.length;
-          zoomed.src = thumbs[idx].src;
-          syncOverlayCaption();
-        } else if (e.key === 'Escape') {
-          closeOverlay();
-        }
-      }
-      document.addEventListener('keydown', overlayNavHandler);
-    });
   });
 });
