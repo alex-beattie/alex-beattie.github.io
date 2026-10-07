@@ -89,3 +89,15 @@
   font-weight: 700;
 }
 .end-note { border-top: 1px solid #bdced9; margin-top: 25px; }
+
+/* One shared site navigation on every page. */
+.topbar { font-family: Arial, Helvetica, sans-serif; }
+@media (max-width: 700px) {
+  .nav-inner { flex-wrap: nowrap; gap: 12px; }
+  .nav-links { gap: 14px; }
+}
+@media (max-width: 380px) {
+  .nav-inner { padding: 0 10px; gap: 10px; }
+  .nav-links { gap: 10px; }
+  .nav-links > a { font-size: 11px; }
+}

@@ -8,11 +8,11 @@
 .mini-profile img { border: 3px solid white; outline: 1px solid #c5d5df; border-radius: 3px; object-fit: cover; }
 .mini-profile strong { display: block; font-size: 12px; }
 .mini-profile small { display: block; font-size: 10px; color: var(--muted); margin-top: 3px; }
-.side-menu { margin-bottom: 20px; }
-.side-menu a { display: block; border-bottom: 1px solid #dce6ed; padding: 10px 13px; font-size: 12px; background: #f8fbfd; }
-.side-menu a:last-child { border-bottom: 0; }
-.side-menu a[aria-current] { background: #e4eff6; color: #254f69; font-weight: bold; border-left: 3px solid #387da5; padding-left: 10px; }
-.side-menu a:hover { background: #edf5fa; }
+
+
+
+
+
 .side-contact { padding: 0 12px; font-size: 11px; color: var(--muted); }
 .side-contact p { line-height: 1.8; }
 .page-heading { margin: 0 0 24px; padding-bottom: 16px; border-bottom: 1px solid #bdced9; }
@@ -102,9 +102,9 @@
   .inner-layout { display: block; }
   .page-sidebar { position: static; }
   .mini-profile, .side-contact, .contents-menu { display: none; }
-  .side-menu { display: flex; flex-wrap: wrap; margin-bottom: 22px; }
-  .side-menu a { flex: 1 0 auto; text-align: center; padding: 8px 9px; font-size: 11px; border-bottom: 0; }
-  .side-menu a[aria-current] { border-left: 0; border-bottom: 2px solid #387da5; padding-left: 9px; }
+
+
+
   .page-heading h1 { font-size: 25px; }
   .project-hero { padding: 18px; }
   .project-title { font-size: 25px; }
