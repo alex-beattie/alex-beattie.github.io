@@ -11,7 +11,7 @@ filters.forEach(button => {
     });
     let count = 0;
     projects.forEach(project => {
-      project.hidden = category !== 'all' && project.dataset.category !== category;
+      project.hidden = category !== 'all' && !project.dataset.category.split(/\s+/).includes(category);
       if (!project.hidden) count++;
     });
     status.textContent = `Showing ${count} ${count === 1 ? 'project' : 'projects'}`;

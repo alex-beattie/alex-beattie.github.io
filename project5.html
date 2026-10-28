@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Autonomous Shop Vac for Nolop | Alex Beattie</title><meta name="description" content="Alex Beattie’s drivetrain work on a three-person autonomous shop-vac project at Nolop: custom wheel hubs, timing belts, motor mounts, and adjustable belt tensioning."><link rel="icon" type="image/svg+xml" href="favicon-ab.svg"><link rel="icon" type="image/png" sizes="32x32" href="favicon-ab.png"><link rel="shortcut icon" href="favicon.ico"><link rel="stylesheet" href="home.css"><link rel="stylesheet" href="pages.css"><script src="gallery-zoom.js" defer></script></head>
+<body class="inner-page"><a class="skip-link" href="#main">Skip to content</a><header class="topbar">
+<nav aria-label="Main navigation" class="nav-inner">
+<a aria-label="Alex Beattie home" class="wordmark" href="index.html">ab<span> / </span><small>in the making</small></a>
+<div class="nav-links"><a href="index.html">Home</a><a href="projects.html" aria-current="page">Projects</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="resume.html">Resume</a></div>
+<a class="contact-button" href="mailto:Alexander.Beattie@tufts.edu">Say hello <span aria-hidden="true">↗</span></a>
+</nav>
+</header><div class="page inner-layout"><aside class="page-sidebar"><a class="mini-profile" href="index.html"><img src="images/home/avatar.png" alt="" width="52" height="52"><span><strong>Alexander Beattie</strong><small>Tufts · Mechanical Engineering</small></span></a><nav class="panel contents-menu" aria-label="On this page"><h2>In this project</h2><a href="#section-1">Project context &amp; my role</a><a href="#section-2">Driving the existing wheels</a><a href="#section-3">Adjustable belt tensioning</a><a href="#section-4">Electronics &amp; navigation</a><a href="#section-5">Project outcome</a><a href="#section-6">Engineering skills used</a></nav><div class="side-contact"><a href="mailto:Alexander.Beattie@tufts.edu">Get in touch ↗</a><p>Somerville, MA<br>BSME · Class of 2027</p></div></aside><main id="main" tabindex="-1"><div class="breadcrumb"><a href="projects.html">Projects</a><span>/</span><span>Case study</span></div><article class="case-study">
+<header class="project-hero">
+  <h1 class="project-title">Autonomous Shop Vac</h1>
+  <p class="project-subtitle">Drivetrain design for autonomous woodshop cleaning · Nolop FAST Facility · Summer 2026</p>
+  <div class="project-meta"><span class="meta-chip">Engineering internship</span><span class="meta-chip">Three-person team</span><span class="meta-chip">Completed</span><span class="meta-chip">Mechanical design &amp; robotics</span></div>
+  <div class="project-hero-blurb"><p>I led the drivetrain work for a three-person project that converted a standard Ryobi shop vacuum into an autonomous cleaning robot for Nolop’s woodshop.</p></div>
+  <div class="project-quickfacts">
+    <div class="quickfact"><div class="q-label">My role</div><div class="q-value">Wheel hubs, timing belts, motors, motor mounts, and belt tensioning</div></div>
+    <div class="quickfact"><div class="q-label">Drive system</div><div class="q-value">Two DC motors driving the existing wheels through timing belts</div></div>
+    <div class="quickfact"><div class="q-label">Navigation</div><div class="q-value">360° LiDAR, a 2D occupancy grid, and grid-based cleaning paths</div></div>
+    <div class="quickfact"><div class="q-label">Setting</div><div class="q-value">Nolop’s “Red Zone” woodshop</div></div>
+  </div>
+</header>
+
+<div class="gallery">
+  <img class="gallery-main" src="images/shop-vac/assembled.webp" alt="Converted Ryobi shop vacuum with belt-driven wheels, electronics, and a raised LiDAR sensor">
+  <div class="gallery-caption" aria-live="polite">The assembled robot at Nolop, showing the drivetrain, rear electronics mast, tool battery, and raised LiDAR sensor.</div>
+  <div class="gallery-thumbs">
+    <img src="images/shop-vac/assembled.webp" alt="Converted Ryobi shop vacuum with belt-driven wheels, electronics, and a raised LiDAR sensor" data-caption="The assembled robot at Nolop, showing the drivetrain, rear electronics mast, tool battery, and raised LiDAR sensor." loading="lazy">
+    <img src="images/shop-vac/wheel-drive-and-pickup.webp" alt="Shop vacuum with a printed wheel hub, timing belt, and floor pickup attachment" data-caption="Side view of the vacuum conversion, with the wheel drive and floor pickup attachment visible." loading="lazy">
+    <img src="images/shop-vac/workbench.webp" alt="Shop-vac drivetrain assembly on a makerspace workbench" data-caption="The vacuum on the workbench during assembly, showing the printed wheel hub and motor mounting." loading="lazy">
+    <img src="images/shop-vac/in-nolop.webp" alt="Shop-vac robot beside a whiteboard at Nolop" data-caption="The robot in the makerspace, with the height of the LiDAR mast visible in context." loading="lazy">
+  </div>
+</div>
+
+<section class="case-section" id="section-1">
+  <h2>Project context &amp; my role</h2>
+  <p>During summer 2026, I worked as a Makerspace Development and Engineering Intern at the Nolop FAST Facility. Sawdust management was a recurring concern in the woodshop, known as the “Red Zone.” Staff regularly swept the space, and our team was tasked with developing an autonomous cleaning solution as part of a broader effort to manage dust.</p>
+  <p>I worked alongside two fellow interns to turn a Ryobi shop vacuum into a Roomba-style cleaning robot. My main responsibility was the drivetrain: adapting the existing wheels for powered motion, integrating the motors and belts, and making belt tension adjustable. The complete robot, including its electronics and navigation system, was a team effort.</p>
+</section>
+
+<section class="case-section" id="section-2">
+  <h2>Driving the existing wheels</h2>
+  <p>We retained the vacuum’s original wheels and added a mounting plate carrying two large DC motors. Custom 3D-printed hubs fitted into the existing wheels, allowing timing belts to transfer motion from the motors to the wheels.</p>
+  <p>My drivetrain work focused on the interfaces between those parts: the wheel hubs, belt drives, motors, and motor mounts. The conversion had to bring the new drive hardware together around the geometry of the existing vacuum.</p>
+  <ul class="process-steps">
+    <li><strong>Wheel hubs:</strong> Custom modeled and printed parts connected the original wheels to the belt drive.</li>
+    <li><strong>Motor mounting:</strong> The mounting plate and motor brackets supported the two drive motors.</li>
+    <li><strong>Power transmission:</strong> Timing belts connected the motors to the driven wheels, with adjustable tension built into the assembly.</li>
+  </ul>
+</section>
+
+<section class="case-section" id="section-3">
+  <h2>Adjustable belt tensioning</h2>
+  <p>I designed a laser-cut adjustable belt tensioner that mounts to the motor brackets. It lets us set the belt tension for the application and readjust it if the belts develop slack over time.</p>
+  <p>The slotted plate carries an idler bearing. Repositioning the idler takes up belt slack, and the fastener holds the selected position. This gives us a way to tune the assembled drivetrain and readjust it after the initial setup.</p>
+<div class="gallery">
+  <img class="gallery-main" src="images/shop-vac/belt-tensioner.webp" alt="Slotted clear tensioner plate and idler bearing beside the motor pulley">
+  <div class="gallery-caption" aria-live="polite">My laser-cut tensioner mounts to the motor bracket. The slot allows the idler bearing position to be adjusted to take up belt slack.</div>
+  <div class="gallery-thumbs">
+    <img src="images/shop-vac/belt-tensioner.webp" alt="Slotted clear tensioner plate and idler bearing beside the motor pulley" data-caption="My laser-cut tensioner mounts to the motor bracket. The slot allows the idler bearing position to be adjusted to take up belt slack." loading="lazy">
+    <img src="images/shop-vac/wheel-drive.webp" alt="Printed blue wheel hub connected to a motor pulley by a timing belt" data-caption="The complete belt path between the motor pulley and printed wheel hub, including the adjustable idler." loading="lazy">
+  </div>
+</div>
+</section>
+
+<section class="case-section" id="section-4">
+  <h2>Electronics &amp; navigation</h2>
+  <p>We mounted a length of T-slot aluminum extrusion to the back of the vacuum to support the electronics and sensor hardware.</p>
+  <ul class="process-steps">
+    <li><strong>Control hardware:</strong> A Raspberry Pi 5 and motor driver connected the control system to the drivetrain.</li>
+    <li><strong>Electronics power:</strong> A mounted DeWalt 20V tool battery powered the electronics. Using Nolop’s standard drill batteries made it easy to swap in a charged pack from the shop’s existing supply.</li>
+    <li><strong>360° LiDAR:</strong> An RPLIDAR sensor sat near the standard table height in Nolop, placing the scan at the level of the benches and equipment we wanted the robot to navigate around.</li>
+  </ul>
+  <p>The robot generated a live 2D occupancy grid of the workshop and used it for localization and grid-based cleaning paths. The sensor mounting height was chosen around the shop’s tables and tools, which provided the geometry for mapping and navigation.</p>
+</section>
+
+<section class="case-section" id="section-5">
+  <h2>Project outcome</h2>
+  <p>By the end of the summer, our team had converted the shop vacuum into an autonomous cleaning robot, bringing together the powered wheels, electronics, LiDAR mapping, and navigation.</p>
+  <p>My contribution was the mechanical system that moved the vacuum: adapting the existing wheels to a belt drive and providing adjustable tensioning so the drivetrain could be set up and readjusted over time.</p>
+</section>
+
+<section class="case-section" id="section-6">
+  <h2>Engineering skills used</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><h4>Mechanical integration</h4><p>Adapting drive hardware to an existing product’s wheels, mounting points, and overall geometry.</p></div>
+    <div class="skill-card"><h4>CAD &amp; fabrication</h4><p>Custom wheel hubs, 3D printing, and a laser-cut adjustable belt tensioner.</p></div>
+    <div class="skill-card"><h4>Belt-drive design</h4><p>Motor mounting, timing-belt transmission, and provision for tension adjustment.</p></div>
+    <div class="skill-card"><h4>Team systems integration</h4><p>Developing the drivetrain as part of a robot combining mechanical, electrical, and navigation systems.</p></div>
+  </div>
+</section>
+</article><div class="case-end"><a href="projects.html">« Back to all projects</a><a href="mailto:Alexander.Beattie@tufts.edu">Ask me about this project ↗</a></div></main></div><footer class="site-footer"><span>© 2026 Alexander Beattie</span><div><a href="mailto:Alexander.Beattie@tufts.edu">Email</a> · <a href="https://www.linkedin.com/in/alexander-beattie-tufts" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="resume.html">Resume</a></div></footer></body></html>

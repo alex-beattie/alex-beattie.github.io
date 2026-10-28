@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>In Progress: Smart Motor for Educational Robotics | Alex Beattie</title><meta name="description" content="An in-progress Tufts senior design capstone for SAM Labs: an educational smart motor with an adjustable clutch, output-shaft sensing, and an ESP32-C3 control system."><link rel="icon" type="image/svg+xml" href="favicon-ab.svg"><link rel="icon" type="image/png" sizes="32x32" href="favicon-ab.png"><link rel="shortcut icon" href="favicon.ico"><link rel="stylesheet" href="home.css"><link rel="stylesheet" href="pages.css"><script src="gallery-zoom.js" defer></script></head>
+<body class="inner-page"><a class="skip-link" href="#main">Skip to content</a><header class="topbar">
+<nav aria-label="Main navigation" class="nav-inner">
+<a aria-label="Alex Beattie home" class="wordmark" href="index.html">ab<span> / </span><small>in the making</small></a>
+<div class="nav-links"><a href="index.html">Home</a><a href="projects.html" aria-current="page">Projects</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="resume.html">Resume</a></div>
+<a class="contact-button" href="mailto:Alexander.Beattie@tufts.edu">Say hello <span aria-hidden="true">↗</span></a>
+</nav>
+</header><div class="page inner-layout"><aside class="page-sidebar"><a class="mini-profile" href="index.html"><img src="images/home/avatar.png" alt="" width="52" height="52"><span><strong>Alexander Beattie</strong><small>Tufts · Mechanical Engineering</small></span></a><nav class="panel contents-menu" aria-label="On this page"><h2>In this project</h2><a href="#section-1">Client brief &amp; team</a><a href="#section-2">Prototype 1: current status</a><a href="#section-3">Clutch &amp; output sensing</a><a href="#section-4">Electronics &amp; packaging</a><a href="#section-5">Next steps</a></nav><div class="side-contact"><a href="mailto:Alexander.Beattie@tufts.edu">Get in touch ↗</a><p>Somerville, MA<br>BSME · Class of 2027</p></div></aside><main id="main" tabindex="-1"><div class="breadcrumb"><a href="projects.html">Projects</a><span>/</span><span>Case study</span></div><article class="case-study">
+<header class="project-hero">
+  <h1 class="project-title">Smart Motor for Educational Robotics</h1>
+  <p class="project-subtitle">Senior design capstone · Client: SAM Labs · Fall 2026</p>
+  <div class="project-meta"><span class="meta-chip"><strong>In progress</strong></span><span class="meta-chip">Prototype 1</span><span class="meta-chip">Four-person team</span><span class="meta-chip">Updated October 2026</span></div>
+  <div class="project-hero-blurb"><p>I’m part of a four-person Tufts senior design team developing a smart motor for SAM Labs. Our first prototype combines a geared DC motor, an adjustable friction clutch, and an absolute encoder linked to the output shaft.</p></div>
+  <div class="project-quickfacts">
+    <div class="quickfact"><div class="q-label">Client</div><div class="q-value">SAM Labs · Educational robotics</div></div>
+    <div class="quickfact"><div class="q-label">Current milestone</div><div class="q-value">First hardware prototype built</div></div>
+    <div class="quickfact"><div class="q-label">Mechanical system</div><div class="q-value">150:1 geared motor and adjustable friction clutch</div></div>
+    <div class="quickfact"><div class="q-label">Control hardware</div><div class="q-value">ESP32-C3, DRV8874 motor driver, and AS5600 encoder</div></div>
+  </div>
+</header>
+
+<div class="gallery">
+  <img class="gallery-main" src="images/smart-motor/prototype-interior.webp" alt="Open first prototype showing the mechanical assembly above a separate electronics base">
+  <div class="gallery-caption" aria-live="polite">Prototype 1 opened to show the mechanical assembly and the protoboard electronics in the base.</div>
+  <div class="gallery-thumbs">
+    <img src="images/smart-motor/prototype-interior.webp" alt="Open first prototype showing the mechanical assembly above a separate electronics base" data-caption="Prototype 1 opened to show the mechanical assembly and the protoboard electronics in the base." loading="lazy">
+    <img src="images/smart-motor/prototype-housing.webp" alt="Blue and black prototype housing with a red output connection" data-caption="The assembled first-prototype housing. Compact packaging and refinement of the enclosure are part of the next iteration." loading="lazy">
+    <img src="images/smart-motor/protoboard.webp" alt="Prototype electronics mounted on a green protoboard inside the black base" data-caption="The protoboard assembly used in Prototype 1, before the planned move to a custom PCB." loading="lazy">
+  </div>
+</div>
+
+<section class="case-section" id="section-1">
+  <h2>Client brief &amp; team</h2>
+  <p>This semester-long capstone pairs each four-person team with an external client. I’m working with Colin Browning, Hugo Vilbois, and Kirk Haskell, with regular design discussions and feedback from our SAM Labs contact, Julian Di Silva.</p>
+  <p>SAM Labs asked us to develop a self-contained, battery-powered, wireless motor for hands-on robotics education. It needs to support both continuous rotation and controlled angular positioning, while tolerating students pushing, twisting, or stalling its output shaft.</p>
+  <p>The mechanical challenge is to protect the geartrain when a student forces the output, while keeping the output position available to the control system. The finished device should also integrate with classroom construction kits and fit into a compact, manufacturable package.</p>
+  <div class="callout"><h4>Targets for the finished system</h4><p>Our current design targets include <strong>1° position error</strong>, an output speed of <strong>100 rpm</strong>, wireless control, a removable rechargeable battery, and LEGO-compatible construction interfaces. These are goals for development and validation, rather than measured results from Prototype 1.</p></div>
+</section>
+
+<section class="case-section" id="section-2">
+  <h2>Prototype 1: current status</h2>
+  <p>We have built the first hardware prototype and packaged its mechanical assembly and electronics in a printed housing. The current build includes:</p>
+  <ul class="process-steps">
+    <li><strong>A working clutch with adjustable friction:</strong> Its resistance can be changed as we refine how the mechanism responds to force applied through the output shaft.</li>
+    <li><strong>A 150:1 geared DC motor:</strong> The motor and reduction gearbox drive the clutch assembly.</li>
+    <li><strong>A mechanical link for output-position sensing:</strong> The AS5600 absolute encoder is mechanically linked to the output side of the clutch.</li>
+    <li><strong>Integrated prototype electronics:</strong> The circuit has progressed from a breadboard to a protoboard assembly mounted in the housing.</li>
+  </ul>
+  <p>The next development phase focuses on integrating encoder feedback into closed-loop control, refining the clutch, and reducing the size of the electronics and enclosure.</p>
+</section>
+
+<section class="case-section" id="section-3">
+  <h2>Clutch &amp; output sensing</h2>
+  <p>The clutch is intended to let the output slip under excessive applied torque, limiting the load transmitted back through the geartrain. Adjustable friction gives us a way to tune the mechanism as the design develops.</p>
+  <p>The AS5600 reads a magnet mechanically coupled to the clutch’s output shaft. This placement matters because the output can move when the clutch slips. Measuring motor rotation alone would not capture that movement, so the feedback needs to follow the output side of the mechanism.</p>
+  <p>This connection establishes the mechanical basis for output feedback. Completing and validating the position and speed control loops remains part of the ongoing work.</p>
+  <div class="gallery">
+  <img class="gallery-main" src="images/smart-motor/clutch-assembly-cad.png" alt="CAD view of the geared motor, clutch output, and adjacent sensing linkage inside the housing">
+  <div class="gallery-caption" aria-live="polite">Prototype 1 CAD showing the motor, clutch assembly, and mechanical linkage on the output side.</div>
+  <div class="gallery-thumbs">
+    <img src="images/smart-motor/clutch-assembly-cad.png" alt="CAD view of the geared motor, clutch output, and adjacent sensing linkage inside the housing" data-caption="Prototype 1 CAD showing the motor, clutch assembly, and mechanical linkage on the output side." loading="lazy">
+    <img src="images/smart-motor/clutch-section-cad.png" alt="Section view through the clutch and output connection" data-caption="A section through the clutch assembly from the first-prototype design review." loading="lazy">
+    <img src="images/smart-motor/concept-sketch.webp" alt="Early hand-drawn layout of a motor, drivetrain, and battery within an enclosure" data-caption="An early team concept sketch exploring how the motor, drivetrain, and battery could fit together." loading="lazy">
+  </div>
+</div>
+</section>
+
+<section class="case-section" id="section-4">
+  <h2>Electronics &amp; packaging</h2>
+  <p>The electronics bring together the ESP32-C3 controller, a DRV8874 motor driver, power regulation, and the encoder interface. The power architecture uses a LiPo battery with a 6 V motor supply and a 3.3 V logic supply.</p>
+  <p>We developed the circuit on a breadboard before moving the components onto protoboard. That step brought the electronics into the first housing and gave us a physical assembly to evaluate alongside the clutch and drivetrain.</p>
+  <p>Our development drawings document the power and signal connections. A custom PCB is planned for a later prototype to consolidate the circuit and support a smaller enclosure.</p>
+  <div class="gallery">
+  <img class="gallery-main" src="images/smart-motor/breadboard.webp" alt="Breadboard circuit with controller, motor driver, power modules, and a battery">
+  <div class="gallery-caption" aria-live="polite">The breadboard version of the electronics used during development before the protoboard assembly.</div>
+  <div class="gallery-thumbs">
+    <img src="images/smart-motor/breadboard.webp" alt="Breadboard circuit with controller, motor driver, power modules, and a battery" data-caption="The breadboard version of the electronics used during development before the protoboard assembly." loading="lazy">
+    <img src="images/smart-motor/wiring-sketch.webp" alt="Hand-drawn prototype schematic showing motor power, logic power, control signals, and encoder connections" data-caption="Our development wiring sketch records the planned power rails and signal connections for the prototype." loading="lazy">
+  </div>
+</div>
+</section>
+
+<section class="case-section" id="section-5">
+  <h2>Next steps</h2>
+  <ul class="process-steps">
+    <li><strong>Encoder integration and control:</strong> Use the output feedback to develop and validate angular-position and speed control.</li>
+    <li><strong>Clutch refinement:</strong> Continue adjusting the mechanism’s response to force applied through the output.</li>
+    <li><strong>Smaller electronics and housing:</strong> Develop a custom PCB and refine the enclosure around the mechanical and electrical assemblies.</li>
+    <li><strong>Wireless operation:</strong> Complete the wireless-control functionality required for a self-contained classroom device.</li>
+    <li><strong>Educational demonstration:</strong> Build an activity that demonstrates controlled motion and the clutch’s response when a user forces the output shaft.</li>
+  </ul>
+</section>
+</article><div class="case-end"><a href="projects.html">« Back to all projects</a><a href="mailto:Alexander.Beattie@tufts.edu">Ask me about this project ↗</a></div></main></div><footer class="site-footer"><span>© 2026 Alexander Beattie</span><div><a href="mailto:Alexander.Beattie@tufts.edu">Email</a> · <a href="https://www.linkedin.com/in/alexander-beattie-tufts" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="resume.html">Resume</a></div></footer></body></html>
